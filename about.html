@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Back to Square One! Let's begin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/x-icon" href="assets/media/images/favicon.svg">
+<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+</head>
+<body class="fade-in">
+
+<!-- <video autoplay muted loop id="sqVideoBg">
+  <source src="assets/media/videobg1.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video> -->
+
+
+<div class="pagebg">
+<div class="pagecontainer">
+<div style="display: flex; border-top: 0px solid black; border-bottom: 0px solid black; padding: 20px; background-color:rgba(255,255,255,1.0); color: black;">
+  <ul class="list" style="display: flex;">
+    <li>&emsp;</li><li><a href="index.html">&#11585;</a></li><li>&emsp;</li><li>&emsp;</li><li>&emsp;</li>
+    <a href="#cognitivesciences" id="topPageMenuitem1" style="transition: opacity 2s ease-in; opacity:0;"><li class="animated-underline">cognitive sciences&emsp;&emsp;</li></a><li>&emsp;</li>
+    <a href="#acceleratedcomputing" id="topPageMenuitem2" style="transition: opacity 2s ease-in; opacity:0;"><li class="animated-underline">accelerated computing&emsp;&emsp;</li></a><li>&emsp;</li>
+    <a href="#thinkingmachines" id="topPageMenuitem3" style="transition: opacity 2s ease-in; opacity:0;"><li class="animated-underline">thinking machines&emsp;&emsp;</li></a><li>&emsp;</li>
+	<a href="#robotics" id="topPageMenuitem4" style="transition: opacity 2s ease-in; opacity:0;"><li class="animated-underline">robotics&emsp;&emsp;</li></a><li>&emsp;</li>
+  </ul>
+</div>
+
+
+<div class="pagecontent">
+<table style="width: 100%; border-spacing: 25px 0;">
+  <tr>
+    <td style="vertical-align: top;"><h1>About</h1></td>
+    <td style="text-align: right;"><h3>We are fearless team devoted to the design and development of</br>future-ready, ultra-efficient computing systems and their applications</h3></td>
+  </tr>
+</table>
+<hr><br><br><br><br>
+<div style="text-align: right;">
+	<img src="assets/media/images/abtimg2.jpg" class="right-align-image">
+</div>
+<br><br>
+<p>&emsp;&emsp;Square One House an innovation house based in Geneva, Switzerland. We invite scientists, artists, engineers and polymaths as fellows to lead and run multidisciplinary research and accelerated programs to develop a technology for targeted applications. Our primary focus areas lie in cognitive sciences, semiconductor design, robotics and artificial general intelligence.</p>
+
+<p>&emsp;&emsp;We uphold research integrity and honesty in our work up to the highest standards. The same is reflected in the quality of our publications. We believe that the highest quality of innovation should be accessible to everyone. That's why we work hard to make our services and technologies accessible to people from all walks of life.</p>
+
+
+<br><br><br><br>
+</div>
+
+<div class="footer" style="position: relative; display: flex; background-color: yellow;">
+  <div class="bottomMenuContainer">
+  <button id="sqButtonPages">&nbsp;&#11585;&nbsp;</button>
+	<ul class="bottomMenu">
+		<li id="bottomMenuitemall1" class="animated-underline"><a href="">about&emsp;</a></li>
+		<li id="bottomMenuitemall2" class="animated-underline"><a href="">careers&emsp;</a></li>
+		<li id="bottomMenuitemall3" class="animated-underline"><a href="">challenges&emsp;</a></li>
+		<li id="bottomMenuitemall4" class="animated-underline"><a href="">terms and privacy policy&emsp;</a></li>
+	</ul>
+  </div>
+</div>
+
+</div> <!-- pagecontainer div -->
+</div> <!-- pagebg div -->
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.body.classList.remove('fade-out');
+  setTimeout(() => document.getElementById('topPageMenuitem1').style.opacity = 1, 75);
+  setTimeout(() => document.getElementById('topPageMenuitem2').style.opacity = 1, 150);
+  setTimeout(() => document.getElementById('topPageMenuitem3').style.opacity = 1, 225);
+  setTimeout(() => document.getElementById('topPageMenuitem4').style.opacity = 1, 300);
+  document.body.style.opacity = 1;
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  var button = document.getElementById('sqButtonPages');
+  
+  button.addEventListener('click', function() {
+    window.location.href = 'index.html'; // Replace 'http://www.example.com' with your desired URL
+  });
+});
+
+//var video = document.getElementById("sqVideoBg");
+//video.playbackRate = 0.6;
+//video.addEventListener('contextmenu', function(e) {
+//    e.preventDefault(); // Prevent the default context menu from appearing
+//  }, false);
+
+  
+document.addEventListener('DOMContentLoaded', (event) => {
+  // Select all links
+  document.querySelectorAll('a').forEach(link => {
+    const isInternalLink = link.hostname === window.location.hostname;
+    
+    if (isInternalLink) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent default link behavior
+        const href = this.getAttribute('href'); // Get the link's href attribute
+        
+        // Apply fade-out class to the body
+        document.body.classList.add('fade-out');
+        
+        // Wait for the fade-out effect to complete before redirecting
+        setTimeout(() => {
+          window.location.href = href;
+        }, 500); // Match the timeout duration with CSS transition duration
+      });
+    }
+  });
+});
+
+</script>
+
+</body>
+</html>
