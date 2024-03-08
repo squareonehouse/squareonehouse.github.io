@@ -219,3 +219,7 @@ hr {
 .pagecontainer p {
 	text-align: justify;
 }
+
+.textcontent {
+	font-size: 0.75em;
+}
