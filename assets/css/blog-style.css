@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Helvetica&display=swap');
+
+body {
+  font-family: 'Helvetica', Arial, sans-serif;
+  margin: 20px;
+  background-color: #fff;
+  color: #111;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1.title {
+  font-weight: bold;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.subtitle {
+  flex: 1 1 45%;
+  font-style: italic;
+  align-self: center;
+}
+
+.author-date {
+  flex: 1 1 45%;
+  text-align: right;
+}
+
+.author-date div {
+  margin: 0.2rem 0;
+}
+
+.content {
+  line-height: 1.6;
+  font-size: 1.1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Reading time text below title */
+.reading-time {
+  font-size: 0.9rem;
+  color: gray;
+  text-align: center;
+  margin: 0 0 1rem 0;
+  font-style: italic;
+}
+
+/* Responsive image style */
+.blog-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem auto;
+  border-radius: 8px;
+}
+
+.blog-figure figcaption {
+  font-size: 0.9rem;
+  color: gray;
+  margin-top: 0.4rem;
+  font-style: italic;
+  text-align: center;
+}
+
+#modeToggle {
+  position: fixed;
+  top: 2%;
+  right: 2px;           /* move 2px left from the edge to show border */
+  width: 20px;
+  height: 30px;
+  padding: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid red;
+  border-radius: 0;     /* no rounding on corners */
+  background: linear-gradient(135deg, white 50%, black 50%);
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  z-index: 1000;
+  user-select: none;
+  box-sizing: border-box; /* include border in width/height */
+  transform-origin: center center;
+}
+
+/* Dark mode styles for button */
+body.dark-mode #modeToggle {
+  background-color: #eee;
+  color: #121212;
+}
+
+button#modeToggle {
+  display: block;
+  margin: 2rem auto;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #111;
+  color: #fff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Citation sup styling */
+sup.citation {
+  cursor: help;
+  color: #0074D9;
+  font-weight: bold;
+  user-select: none;
+}
+
+/* Optional: style reference section header */
+#references-section {
+  font-size: 1rem;
+}
+#references-section h3 {
+  font-weight: bold;
+  /* border-bottom: 2px solid #ccc; */
+  padding-bottom: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+#references-list li::marker {
+  content: '[' counter(list-item) '] ';
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #eee;
+}
+
+body.dark-mode button#modeToggle {
+  background-color: #eee;
+  color: #121212;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .meta-row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .subtitle, .author-date {
+    flex: 1 1 100%;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .author-date {
+    margin-bottom: 1rem;
+  }
+}

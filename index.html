@@ -9,7 +9,7 @@
 <body class="">
 
 <video autoplay muted loop id="sqVideoBg">
-  <source src="assets/media/videobg1.mp4" type="video/mp4">
+  <source src="assets/media/videobg3.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
 
@@ -29,9 +29,9 @@
   <button id="sqButtonMain">&nbsp;&nbsp;&#12297;</button>
 	<ul class="bottomMenu">
 		<li id="bottomMenuitem1" class="animated-underline"><a href="about.html">about&emsp;</a></li>
-		<li id="bottomMenuitem2" class="animated-underline"><a href="">careers&emsp;</a></li>
-		<li id="bottomMenuitem3" class="animated-underline"><a href="">challenges&emsp;</a></li>
-		<li id="bottomMenuitem4" class="animated-underline"><a href="termsandprivacypolicy.html">terms and privacy policy&emsp;</a></li>
+		<!-- <li id="bottomMenuitem2" class="animated-underline"><a href="">careers&emsp;</a></li> -->
+		<!-- <li id="bottomMenuitem3" class="animated-underline"><a href="">challenges&emsp;</a></li> -->
+	  <li id="bottomMenuitem4" class="animated-underline"><a href="termsandprivacypolicy.html">terms and privacy policy&emsp;</a></li>
 	</ul>
   </div>
 </div>
@@ -99,6 +99,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
   });
 });
+
+window.addEventListener('pageshow', (event) => {
+  if (event.persisted) {
+    // Page was restored from bfcache
+
+    // Force the menuNavigation opacity back to 1 (or trigger the ease-in animation)
+    const menuNav = document.getElementById('topMenuborder2');
+    if (menuNav) {
+      menuNav.style.opacity = '1';
+      // Optionally re-trigger CSS animations or add a class if you use one
+      // Example: menuNav.classList.add('fade-in');
+    }
+  }
+});
+
 </script>
 
 </body>
